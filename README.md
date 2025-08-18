@@ -1,25 +1,42 @@
-<p align="center">
-    <a href="https://evomark.co.uk" target="_blank" alt="Link to evoMark's website">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--dark.svg">
-          <source media="(prefers-color-scheme: light)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg">
-          <img alt="evoMark company logo" src="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg" width="500">
-        </picture>
-    </a>
-</p>
+# 📦 Fork Notice
 
-<p align="center">
-  <img src="https://img.shields.io/npm/dm/vite-plugin-gutenberg-blocks.svg" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/vite-plugin-gutenberg-blocks"><img src="https://img.shields.io/npm/v/vite-plugin-gutenberg-blocks.svg" alt="Version"></a>
-  <a href="https://github.com/evo-mark/vite-plugin-gutenberg-blocks/blob/main/LICENCE"><img src="https://img.shields.io/npm/l/vite-plugin-gutenberg-blocks.svg" alt="License"></a>
-</p>
+This is a maintained fork of [evo-mark/vite-plugin-gutenberg-blocks](https://github.com/evo-mark/vite-plugin-gutenberg-blocks).
 
-# Vite Plugin: Gutenberg Blocks
+## Added features
 
-Develop a Gutenberg block library powered by Vite, with support for build and watch modes.
+- `entryDir` prop — allows us to specify a custom entry directory for Gutenberg blocks, making the package compatible with theme-based block development.
 
----
+## Install
 
-For installation and documentation instructions, go to [evoMark](https://evomark.co.uk/open-source-software/vite-plugin-gutenberg-blocks/)
+```bash
+npm install @yardinternet/vite-plugin-gutenberg-blocks
+```
 
-For information on how to upgrade from version 1.x to 2.x, please see [Migrating to Version 2.x](https://evomark.co.uk/open-source-software/vite-plugin-gutenberg-blocks#page_heading_5)
+Used in the Yard Toolkit
+
+## 🔄 Keeping Up With Upstream
+
+The upstream remote is still configured:
+
+```
+git remote add upstream https://github.com/evo-mark/vite-plugin-gutenberg-blocks.git
+```
+
+To pull updates:
+
+```
+git fetch upstream
+git checkout main
+git merge upstream/main
+```
+
+Be aware: since this is a heavy fork, merge conflicts may need manual resolution.
+
+## 🚀 How to publish
+
+1. Change the version of `package.json` to the desired version and commit this change.
+2. Go to [releases of the package](https://github.com/yardinternet/vite-plugin-gutenberg-blocks/releases) and click on "Draft a new release"
+3. Click "Choose a tag", type the corresponding version and press Enter. Add a title and description for the release.
+4. Click "Publish release"
+
+The Github Workflow `release-package.yml` will run whenever a release is created in this repository. If the tests pass, then the package will be published to Github packages.

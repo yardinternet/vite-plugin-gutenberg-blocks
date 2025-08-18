@@ -1,7 +1,12 @@
 {
-	"name": "vite-plugin-gutenberg-blocks",
+	"name": "@yardinternet/vite-plugin-gutenberg-blocks",
 	"version": "2.5.0",
-	"description": "Vite-powered Gutenberg block development for Wordpress",
+	"description": "Yard-maintained fork of vite-plugin-gutenberg-blocks with theme-block support (entryDir prop).",
+	"author": {
+		"name": "Yard | Digital Agency",
+		"email": "info@yard.nl",
+		"url": "https://www.yard.nl/"
+	},
 	"main": "dist/index.js",
 	"module": "dist/index.js",
 	"type": "module",
@@ -9,7 +14,8 @@
 	"scripts": {
 		"build": "tsc",
 		"watch": "tsc --watch",
-		"prepublishOnly": "npm run build"
+		"prepublishOnly": "npm run build",
+		"test": "echo 'No tests specified'"
 	},
 	"bin": {
 		"init": "./bin/initEnvironment.js",
@@ -22,10 +28,6 @@
 		"/bin",
 		"/stubs"
 	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/evo-mark/vite-plugin-gutenberg-blocks.git"
-	},
 	"keywords": [
 		"vite",
 		"wordpress",
@@ -33,7 +35,6 @@
 		"blocks",
 		"react"
 	],
-	"author": "evomark",
 	"license": "MIT",
 	"homepage": "https://evomark.co.uk",
 	"engines": {
@@ -64,5 +65,12 @@
 			"@parcel/watcher",
 			"esbuild"
 		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yardinternet/vite-plugin-gutenberg-blocks.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/@yardinternet"
 	}
 }
