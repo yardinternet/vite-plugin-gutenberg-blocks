@@ -62,6 +62,15 @@ export const createViteBlock = (pluginConfig = {} as PluginConfig) => {
 			generateBundle: function (options: OutputOptions, bundle: { [fileName: string]: ChunkInfo | AssetInfo }) {
 				generateBundle.call(this, options, bundle, dependencies);
 			},
+			closeBundle() {
+				if (process && (process as any)._getActiveHandles) {
+					for (const handle of (process as any)._getActiveHandles()) {
+						if (handle?.spawnfile?.includes("dart-sass")) {
+							handle.kill();
+						}
+					}
+				}
+			},
 		},
 		...generatePlugins({ outDir: normalisedOut, entryDir }),
 	];
