@@ -1,0 +1,36 @@
+version: 2
+updates:
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    groups:
+      actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    groups:
+      npm-version-updates:
+        applies-to: 'version-updates'
+        patterns:
+          - "*"
+      npm-security-updates:
+        applies-to: 'security-updates'
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    versioning-strategy: lockfile-only
+    cooldown:
+      default-days: 7
+      exclude:
+        - '@yardinternet/*'
