@@ -22,9 +22,8 @@ jobs:
                   node-version: 22
                   registry-url: https://npm.pkg.github.com/
 
-            - run: |
-                  corepack enable
-                  corepack prepare pnpm@10.5.2 --activate
+            # Corepack reads the pnpm version from package.json's "packageManager" field
+            - run: corepack enable
 
             # Install dependencies using pnpm
             - run: pnpm install
