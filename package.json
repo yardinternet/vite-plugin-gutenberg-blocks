@@ -1,6 +1,6 @@
 {
 	"name": "@yardinternet/vite-plugin-gutenberg-blocks",
-	"version": "2.6.2",
+	"version": "2.7.0",
 	"description": "Yard-maintained fork of vite-plugin-gutenberg-blocks with theme-block support (entryDir prop).",
 	"author": {
 		"name": "Yard | Digital Agency",
