@@ -17,10 +17,12 @@ const generatePlugins = ({ outDir = null, entryDir = null } = {}) => {
 			{
 				src: resolve(pwd, entryDir + "/block.json"),
 				dest: ".",
+				rename: { stripBase: true },
 			},
 			{
 				src: resolve(pwd, entryDir + "/*.php"),
 				dest: ".",
+				rename: { stripBase: true },
 			},
 		],
 	});
