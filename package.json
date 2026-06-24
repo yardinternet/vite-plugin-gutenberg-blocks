@@ -1,6 +1,6 @@
 {
 	"name": "@yardinternet/vite-plugin-gutenberg-blocks",
-	"version": "2.7.0",
+	"version": "2.7.1",
 	"description": "Yard-maintained fork of vite-plugin-gutenberg-blocks with theme-block support (entryDir prop).",
 	"author": {
 		"name": "Yard | Digital Agency",
@@ -42,12 +42,12 @@
 	},
 	"devDependencies": {
 		"@types/grecaptcha": "^3.0.9",
-		"@types/node": "^22.19.19",
+		"@types/node": "^22.19.21",
 		"@vitejs/plugin-react": "^6.0.2",
 		"sass": "^1.63.6"
 	},
 	"optionalDependencies": {
-		"sass": "^1.99.0"
+		"sass": "^1.101.0"
 	},
 	"peerDependencies": {
 		"typescript": ">=4.9.4",
@@ -55,9 +55,9 @@
 	},
 	"dependencies": {
 		"chalk": "^5.6.2",
-		"esbuild": "^0.28.0",
-		"rollup": "^4.60.4",
-		"vite-plugin-static-copy": "^4.1.0"
+		"esbuild": "^0.28.1",
+		"rollup": "^4.62.0",
+		"vite-plugin-static-copy": "^4.1.1"
 	},
 	"packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a",
 	"pnpm": {
