@@ -28,6 +28,10 @@ jobs:
             # Install dependencies using pnpm
             - run: pnpm install
 
+            # Set package version from tag
+            - name: Set package version from tag
+              run: npm version ${GITHUB_REF_NAME#v} --no-git-tag-version
+
             # Build the package
             - run: pnpm run build
 
