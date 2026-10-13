@@ -51,15 +51,11 @@ export async function sideload(blockJson: WordpressBlockJson, outputDirectory: s
 						build.onLoad({ filter: /.*/, namespace: "wordpress-alias" }, (args) => {
 							const moduleName = args.path.split("/")[1];
 							wpImports.push("wp-" + moduleName);
+							// Map to the camelCased global (api-fetch -> apiFetch) and export the
+							// module itself, so default exports like apiFetch() stay callable.
+							const globalName = moduleName.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 							return {
-								contents: `
-                const wpModule = window.wp.${moduleName};
-                for (const key in wpModule) {
-                  if (Object.prototype.hasOwnProperty.call(wpModule, key)) {
-                    exports[key] = wpModule[key];
-                  }
-                }
-              `,
+								contents: `module.exports = window.wp.${globalName};`,
 								loader: "js",
 							};
 						});
