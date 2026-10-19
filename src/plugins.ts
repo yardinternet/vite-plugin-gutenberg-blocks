@@ -1,12 +1,13 @@
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import react from "@vitejs/plugin-react";
+import { normalizePath } from "vite";
 import { resolve, sep } from "node:path";
 
 /* *********************************************
  * External plugins required for the build process
  * ******************************************* */
 
-const pwd = process.env.PWD;
+const pwd = process.env.PWD ?? process.cwd();
 const block = pwd.split(sep).pop();
 
 const generatePlugins = ({ outDir = null, entryDir = null } = {}) => {
@@ -14,13 +15,14 @@ const generatePlugins = ({ outDir = null, entryDir = null } = {}) => {
 		silent: true,
 		targets: [
 			// Since they're not imported into the bundle, we need to copy these files manually
+			// Glob patterns need forward slashes, resolve() returns backslashes on Windows
 			{
-				src: resolve(pwd, entryDir + "/block.json"),
+				src: normalizePath(resolve(pwd, entryDir + "/block.json")),
 				dest: ".",
 				rename: { stripBase: true },
 			},
 			{
-				src: resolve(pwd, entryDir + "/*.php"),
+				src: normalizePath(resolve(pwd, entryDir + "/*.php")),
 				dest: ".",
 				rename: { stripBase: true },
 			},

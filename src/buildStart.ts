@@ -23,7 +23,7 @@ export async function sideload(blockJson: WordpressBlockJson, outputDirectory: s
 		});
 
 	for (const script of concatScripts) {
-		const scriptPath = resolve(`${process.env.PWD}/${entryDir}/${script}`);
+		const scriptPath = resolve(`${process.env.PWD ?? process.cwd()}/${entryDir}/${script}`);
 		// Vite won't track this file for watching, so we'll add a manual watcher
 		this.addWatchFile(resolve(process.cwd(), entryDir, script));
 		let wpImports = [];

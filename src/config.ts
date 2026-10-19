@@ -8,7 +8,7 @@ import { resolve, sep } from "node:path";
  * @see https://vitejs.dev/guide/api-plugin.html#config
  */
 export const config = ({ outDir = null, blockFile = null, entryDir = null, blockFolderName = null } = {}) => {
-	const pwd = process.env.PWD;
+	const pwd = process.env.PWD ?? process.cwd();
 
 	return {
 		define: { "process.env.NODE_ENV": `"${process.env.NODE_ENV}"` },
