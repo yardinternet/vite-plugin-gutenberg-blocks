@@ -21,7 +21,7 @@ interface PluginConfig {
 let _config: ResolvedConfig;
 
 export const createViteBlock = (pluginConfig = {} as PluginConfig) => {
-	const pwd = process.env.PWD;
+	const pwd = process.env.PWD ?? process.cwd();
 	let rootDirectory: string;
 	let outputDirectory: string;
 
